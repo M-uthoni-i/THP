@@ -1,0 +1,12 @@
+# Ignore the virtual environment folder
+thehealingpen/
+
+# Bytecode & cache files
+__pycache__/
+*.pyc
+
+# Environment/config files
+.env
+
+# VS Code settings (optional but helpful)
+.vscode/
