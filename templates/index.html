@@ -1,94 +1,148 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poetry Haven</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The healing pen</title>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Poetry Haven</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Poems</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Favicon placeholder: replace with your own favicon file -->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png.jpg') }}">
 
-    <!-- Hero Section -->
-    <header class="hero-section text-center text-white d-flex align-items-center justify-content-center">
-        <div class="container">
-            <h1 class="display-4 fw-bold">Dive into the World of Words</h1>
-            <p class="lead mb-4">Where poetry awakens your soul and imagination takes flight.</p>
-            <a href="#featured-poems" class="btn btn-primary btn-lg">Explore Poems</a>
-        </div>
-    </header>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Featured Poems -->
-    <section id="featured-poems" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Poems</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Morning Light</h5>
-                            <p class="card-text">The sun creeps softly over hills, whispering secrets to the daffodils. Every ray a golden thread, stitching dreams where angels tread.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Quiet River</h5>
-                            <p class="card-text">Water hums a gentle tune, reflecting silver light of moon. Stones beneath, stories untold, timeless whispers in the cold.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title">Twilight Dreams</h5>
-                            <p class="card-text">Shadows dance in evening’s glow, carrying secrets only night can know. Dreams are stitched with threads of fire, rising high with heart’s desire.</p>
-                            <a href="#" class="btn btn-outline-primary btn-sm">Read More</a>
-                        </div>
-                    </div>
+        <!-- Fonts: 2 for headings/subheadings + 1 for content -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg sticky-top nav-glass navbar-light">
+            <div class="container py-2">
+                <a class="navbar-brand fw-bold" href="/">The healing pen</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto gap-lg-2 mt-3 mt-lg-0">
+                        <li class="nav-item"><a class="btn btn-nav" href="/">Home</a></li>
+                        <li class="nav-item"><a class="btn btn-nav" href="/poems">Poems</a></li>
+                        <li class="nav-item"><a class="btn btn-nav" href="/about">About</a></li>
+                        <li class="nav-item"><a class="btn btn-nav" href="/contact">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
+    
+        <!-- Hero -->
+        <header class="hero-section position-relative overflow-hidden">
+            <div class="soft-shape shape-a"></div>
+            <div class="soft-shape shape-b"></div>
+            <div class="soft-shape shape-c"></div>
 
-    <!-- Call to Action -->
-    <section class="cta-section text-center py-5 bg-light">
-        <div class="container">
-            <h2 class="mb-3">Join Our Poetry Community</h2>
-            <p class="mb-4">Share your own poems, discover new voices, and connect with fellow poetry lovers.</p>
-            <a href="#" class="btn btn-lg btn-success">Get Started</a>
-        </div>
-    </section>
+            <div class="container hero-content text-center">
+                <p class="tagline">A warm space for poetry lovers</p>
+                <h1 class="display-4 mb-3">Let your thoughts bloom in verse</h1>
+                <p class="lead mx-auto mb-4">Explore creative writing, discover new voices, and enjoy a cozy and interactive poetry experience.</p>
+                <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <a href="#featured-poems" class="btn btn-primary btn-lg rounded-pill px-4">Explore Poems</a>
+                    <a href="#community" class="btn btn-outline-dark btn-lg rounded-pill px-4">Join Community</a>
+                </div>
+            </div>
+        </header>
+    
+        <!-- Featured Poems -->
+        <section id="featured-poems" class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="section-title">Featured Poems</h2>
+                    <p class="section-subtitle">Soft words and warm imagery for every mood.</p>
+                </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 text-center">
-        &copy; 2026 Poetry Haven. All Rights Reserved.
-    </footer>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <article class="poem-card h-100 p-4">
+                            <h3>Morning Ember</h3>
+                            <p>The dawn pours honey on the sky, while quiet streets begin to sigh. A gentle spark, a hopeful flame, each sunrise softly speaks your name.</p>
+                            <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill">Read more</a>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+                        <article class="poem-card h-100 p-4">
+                            <h3>Tea &amp; Rain</h3>
+                            <p>Rain taps the glass in silver thread, while warm dreams rise from fresh baked bread. The world slows down, the heart feels near, and hidden songs become more clear.</p>
+                            <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill">Read more</a>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="poem-card h-100 p-4">
+                            <h3>Lantern Night</h3>
+                            <p>Beneath a moon of amber light, we tie our wishes to the night. They drift above in glowing streams, carrying hope and tender dreams.</p>
+                            <a href="#" class="btn btn-sm btn-outline-secondary rounded-pill">Read more</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Section -->
+        <section id="community" class="pb-5">
+            <div class="container">
+                <div class="showcase p-4 p-md-5">
+                    <div id="poetryCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#poetryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#poetryCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#poetryCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner rounded-4">
+                            <div class="carousel-item active">
+                                <div class="carousel-card text-center p-4 p-md-5">
+                                    <h3>Weekly Prompt</h3>
+                                    <p>"Write a poem about a memory that smells like cinnamon and rain."</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-card text-center p-4 p-md-5">
+                                    <h3>Poet Spotlight</h3>
+                                    <p>Discover one inspiring poet each week and read their best work.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="carousel-card text-center p-4 p-md-5">
+                                    <h3>Open Mic Evenings</h3>
+                                    <p>Share your verses with a supportive and welcoming poetry community.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#poetryCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#poetryCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div> 
+                </div>              
+            </div>
+        </section>
+    
+        <footer class="py-4 text-center">
+            <p class="mb-0">&copy; 2026 THP. Crafted with warmth &amp; words.</p>
+        </footer>
+    
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
